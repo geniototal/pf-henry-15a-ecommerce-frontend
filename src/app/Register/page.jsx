@@ -13,6 +13,8 @@ import { useCreateUserMutation } from "@/redux/services/usersApi";
 import { useLoginUserMutation } from "@/redux/services/usersApi";
 import {loginUser} from "@/redux/features/userSlice"
 import { useDispatch } from 'react-redux';
+import { signIn } from "next-auth/react";
+
 //iconos
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FaGoogle } from "react-icons/fa";
@@ -388,6 +390,9 @@ const Register = () => {
                 </button>
                 <button
                   type="button"
+                  onClick={async ()=> {
+                    signIn('google');
+                  }}
                   className=" transition-all duration-300 ease-in-out transform scale-100 hover:scale-105 flex items-center justify-center w-full h-8 bg-red-500 hover:bg-red-800 text-white px-4 py-2 rounded focus:outline-none focus:border-teal-300 duration-200 mt-2"
                 >
                   <FaGoogle className="mr-2" />

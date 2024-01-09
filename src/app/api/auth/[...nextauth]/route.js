@@ -84,7 +84,7 @@ const authOptions = {
                             return login.data;
                         },
                         async (error) => {
-                            //console.log("error axios", error.response.data);
+                            console.log("error axios", error.response.data);
                             if (error.response.data.error === "User not found") {
                                 //console.log('crear usuario');
                                 return await axios.post('https://pf-15a.up.railway.app/api/users', userdb)
